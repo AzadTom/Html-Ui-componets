@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordian</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      *::-webkit-scrollbar {
+        display: none;
+      }
+
+      body {
+        font-family: "Helvetica";
+        background-color: white;
+        color: black;
+       
+      }
+
+      section.faq{
+
+        
+       
+
+
+        margin:  0 auto;
+        padding: 1rem;
+        max-width: 800px;
+        width: 100%;
+        
+        
+        
+
+
+      }
+
+      .tab-label{
+
+        display: flex;
+        justify-content: space-between;
+
+
+        background: brown;
+        color: white;
+      }
+
+    
+      
+      .tab-content{
+
+        display: none;
+
+      }
+
+      input{
+
+        display: none;
+      }
+
+      input:checked ~ .tab-content{
+
+        display: block;
+        padding: 1rem;
+        border: 1px solid brown;
+
+      }
+
+
+      .tab-label{
+
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        padding: 1rem;
+
+      }
+
+      .tab-label::after{
+
+        content: "\276F";
+        width: 1em;
+        height: 1em;
+        text-align: center;
+        transform: rotate(90deg);
+        transition: all 0.35s;
+      }
+
+
+      .tab input:checked + .tab-label::after{
+
+        transform:rotate(270deg);
+
+      }
+
+      #title{
+
+        margin-bottom: 1rem;
+        font-size: 18px;
+        color: brown;
+      }
+
+      
+
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <section class="faq">
+        <h2 id="title">Frequently asked question?</h2>
+      <div class="tab">
+        <input type="checkbox" id="check1" />
+        <label for="check1" class="tab-label">Section1</label>
+        <div class="tab-content">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla esse
+            cum voluptatem corporis repellendus, deserunt minus voluptates
+            facilis aliquid quam ipsam, accusantium quo neque. Adipisci esse
+            neque, blanditiis at aperiam assumenda deserunt non!
+          </p>
+        </div>
+      </div>
+
+      <div class="tab">
+        <input type="checkbox" id="check2" />
+        <label for="check2" class="tab-label">Section2</label>
+        <div class="tab-content">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla esse
+            cum voluptatem corporis repellendus, deserunt minus voluptates
+            facilis aliquid quam ipsam, accusantium quo neque. Adipisci esse
+            neque, blanditiis at aperiam assumenda deserunt non!
+          </p>
+        </div>
+      </div>
+
+      <div class="tab">
+        <input type="checkbox" id="check3" />
+        <label for="check3" class="tab-label">Section3</label>
+        <div class="tab-content">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla esse
+            cum voluptatem corporis repellendus, deserunt minus voluptates
+            facilis aliquid quam ipsam, accusantium quo neque. Adipisci esse
+            neque, blanditiis at aperiam assumenda deserunt non!
+          </p>
+        </div>
+      </div>
+
+
+      <div class="tab">
+        <input type="checkbox" id="check4" />
+        <label for="check4" class="tab-label">Section4</label>
+        <div class="tab-content">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla esse
+            cum voluptatem corporis repellendus, deserunt minus voluptates
+            facilis aliquid quam ipsam, accusantium quo neque. Adipisci esse
+            neque, blanditiis at aperiam assumenda deserunt non!
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

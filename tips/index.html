@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css tips</title>
+    <style>
+
+        .container ~  div{
+
+            background-color: red;
+        }
+
+        section  + p  {
+
+            background-color: brown;
+        }
+
+      
+
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+        <ul>
+            <li>
+                <ul>
+                    <li>One</li>
+                    <li>Two</li>
+                    <li>Three</li>
+                    <li>Four</li>
+                </ul>
+            </li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+    <p>Two</p>
+    <div>
+        One
+    </div>
+    <p>Three</p>
+    <div>
+        Four
+    </div>
+
+    <section>
+         <p>One</p>
+         <p>Two</p>
+         <div>
+            <p>Three</p>
+         </div>
+    </section>
+    <p>Next element</p>
+    <p>Next next element</p>
+    
+</body>
+</html>

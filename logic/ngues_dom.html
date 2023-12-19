@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom </title>
+    <style>
+
+
+
+
+        *{
+
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        *::-webkit-scrollbar{
+
+        display: none;
+
+        }
+
+        body{
+
+            background-color: black;
+            color: white;
+        }
+
+        section{
+
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        input{
+
+            padding: 1rem 2rem;
+        }
+
+        button{
+
+            padding: 1rem 2rem;
+            background: blue;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <section>
+        <h1>GUESS THE NUMBER</h1>
+
+    <h3>Choose number between 1-10</h3>
+
+    <div class="fomr">
+
+        <input type="text" id="value" placeholder="number between 1-10">
+        <button id="button" >Submit</button>
+    </div>
+    </section>
+    
+
+    <script>
+
+
+        let input = document.querySelector("input");
+        let button = document.querySelector("button");
+
+
+        let random  = Math.floor(Math.random()*11);
+
+        let num =1;
+
+        button.addEventListener('click',(e)=>{
+
+
+
+            console.log(random);
+
+            let inputvalue = input.value;
+
+
+            if(inputvalue==random)
+            {
+                alert(`you won this game in step${num} `);
+                
+            }
+            else if(inputvalue>10)
+            {
+                alert(`number is higher than 10!  step${num}`);
+                input.value = "";
+                num++;
+            }
+            else if(inputvalue>random)
+            {
+                alert(`choose smaller numbe  step${num}`);
+                input.value = "";
+                num++;
+            }
+            else if(inputvalue<random)
+            {
+                alert(`choose higher number!  step${num}`);
+                input.value = "";
+                num++;
+            }
+           
+
+
+
+        })
+
+
+
+
+
+    </script>
+</body>
+</html>

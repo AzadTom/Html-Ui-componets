@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Rolling Game!</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+    }
+
+
+    *::-webkit-scrollbar {
+        display: none;
+
+    }
+
+    body {
+
+        font-family: 'Courier New', Courier, monospace;
+        background: black;
+
+    }
+
+
+    main {
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .title {
+
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        margin: 2rem 0;
+    }
+
+    .description {
+
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        margin: 2rem 0;
+    }
+
+    section.container {
+
+        max-width: 600px;
+        flex: content;
+        display: flex;
+        justify-content: space-between;
+        align-self: center;
+        gap: 2em;
+
+
+    }
+
+
+
+    img {
+
+        width: 100%;
+        transition: all 1s ease-in-out;
+
+
+    }
+
+
+
+
+    .team {
+
+        background: #212121;
+        padding: 1.2em;
+
+        flex: 1;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1.2em;
+        justify-content: center;
+        align-items: center;
+        color: white;
+
+
+    }
+
+
+
+    button {
+
+        width: 100%;
+        padding: 1rem 2rem;
+        border-radius: 0.6rem;
+
+        background: linear-gradient(to right, rgb(224, 27, 1), rgb(161, 1, 1));
+        color: white;
+        border: none;
+
+        cursor: pointer;
+
+        font-size: 1rem;
+
+
+    }
+
+
+    .score {
+
+        font-size: 1.2rem;
+    }
+
+
+
+
+
+    @media(max-width:425px) {
+
+        .team {
+            background: transparent;
+        }
+
+        section.container {
+
+            background-color: #212121;
+        }
+    }
+</style>
+
+<body>
+
+    <h1 class="title">Dice Rolling Game!</h1>
+
+    <h2 class="description">Round 1</h2>
+
+    <main>
+        <section class="container">
+            <div class="team-a team">
+
+                <img src="./img/one.svg" alt="one" class="teamA">
+                <h2>Team A</h2>
+                <div class="score" id="score1">0</div>
+                <button onclick="team1()">Rollup</button>
+
+            </div>
+
+            <div class="teab-b team">
+
+                <img src="./img/two.svg" alt="two" class="teamB">
+                <h2>Team B</h2>
+                <div class="score" id="score2">0</div>
+                <button onclick="team2()">Rollup</button>
+
+            </div>
+        </section>
+
+
+    </main>
+
+
+
+
+    <script>
+
+        let teamA = document.querySelector(".teamA");
+        let teamB = document.querySelector(".teamB");
+
+        let score1item = document.getElementById("score1");
+        let score2item = document.getElementById("score2");
+
+
+        let description = document.querySelector(".description");
+
+        let count = 0;
+
+        let score1 = 0;
+
+        let score2 = 0;
+
+        function team1() {
+
+            let number = Math.floor(Math.random() * 7);
+
+            count++;
+
+
+            if (number == 1) {
+
+                teamA.src = "./img/one.svg";
+                score1 += number;
+                score1item.innerText = score1;
+
+
+            }
+            else if (number == 2) {
+
+                teamA.src = "./img/two.svg";
+                score1 += number;
+                score1item.innerText = score1;
+
+
+            } else if (number == 3) {
+
+                teamA.src = "./img/three.svg";
+                score1 += number;
+                score1item.innerText = score1;
+
+            }
+            else if (number == 4) {
+
+                teamA.src = "./img/four.svg";
+                score1 += number;
+                score1item.innerText = score1;
+
+            }
+            else if (number == 5) {
+
+                teamA.src = "./img/five.svg";
+                score1 += number;
+                score1item.innerText = score1;
+
+
+            } else {
+
+                teamA.src = "./img/six.svg";
+                score1 += number;
+                score1item.innerText = score1;
+
+            }
+
+
+            checkcount()
+
+            
+
+           
+
+
+
+
+
+
+
+        }
+
+        function team2() {
+
+            let number = Math.floor(Math.random() * 7);
+            count++;
+
+
+            if (number == 1) {
+
+                teamB.src = "./img/one.svg";
+                score2 += number;
+                score2item.innerText = score2;
+
+            }
+            else if (number == 2) {
+
+                teamB.src = "./img/two.svg";
+                score2 += number;
+                score2item.innerText = score2;
+
+
+            } else if (number == 3) {
+
+                teamB.src = "./img/three.svg";
+                score2 += number;
+                score2item.innerText = score2;
+
+            }
+            else if (number == 4) {
+
+                teamB.src = "./img/four.svg";
+                score2 += number;
+                score2item.innerText = score2;
+
+            }
+            else if (number == 5) {
+
+                teamB.src = "./img/five.svg";
+                score2 += number;
+                score2item.innerText = score2;
+
+
+            } else {
+
+                teamB.src = "./img/six.svg";
+                score2 += number;
+                score2item.innerText = score2;
+
+            }
+
+
+
+
+            checkcount();
+            
+
+        }
+
+
+
+        function reset() {
+
+
+            count = 0;
+            score1 = 0;
+            score2 = 0;
+
+           
+            setTimeout(()=>{
+
+                description.innerText = "Round 1";
+
+            },1000);
+           
+        }
+
+
+
+        function checkcount() {
+
+
+           
+            if (count == 2) {
+
+                description.innerText = "Round 2";
+            }
+            else if (count == 4) {
+                description.innerText = "Round 3";
+            }
+            else if (count == 6) {
+                description.innerText = "Round 4";
+            }
+            else if (count == 8) {
+
+                description.innerText = "Round 5";
+
+            }
+           
+           
+
+
+            if(count ==8)
+            {
+                 
+
+                if(score1> score2)
+                {
+                  
+                    description.innerText = "Team A has won!";
+                    reset();
+                   
+                }
+                else
+                {
+                   
+                    description.innerText = "Team B has won!";
+                    reset();
+                    
+                }
+
+               
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
